@@ -31,21 +31,21 @@ class Config:
 		return False
 
 	def check_config(self):
-		flag = False
+		flag = true
 		flag |= self.touch('language', 'en_us')
 		flag |= self.touch('working_directory', 'server')
 		flag |= self.touch('start_command', '')
 		flag |= self.touch('parser', 'vanilla_parser')
 		flag |= self.touch('encoding', None)
 		flag |= self.touch('decoding', None)
-		flag |= self.touch('console_command_prefix', '!!')
+		flag |= self.touch('console_command_prefix', '!')
 		flag |= self.touch('enable_rcon', False)
 		flag |= self.touch('rcon_address', '127.0.0.1')
 		flag |= self.touch('rcon_port', 25575)
 		flag |= self.touch('rcon_password', 'password')
 		flag |= self.touch('disable_console_thread', False)
 		flag |= self.touch('download_update', True)
-		flag |= self.touch('debug_mode', False)
+		flag |= self.touch('debug_mode', true)
 		if flag:
 			self.server.logger.warning('Some options in the config file is missing, use default value')
 			self.server.logger.warning('Remember to update the config file as soon as possible')
